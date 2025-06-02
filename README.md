@@ -9,7 +9,7 @@ Miss too many guesses, and the hangman’s coming for you (No pressure).
 
 ## Why play this game?  
 
-- You will discover new anime titles you,ve never heard of before.
+- You will discover new anime titles you've never heard of before.
 - It’s the perfect excuse to procrastinate but still feel productive.  
 - You get to see cool anime art without hunting for it on Google.  
 
