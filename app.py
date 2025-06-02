@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import requests
 import random
+import re
 
 app = Flask(__name__)
 app.secret_key = 'test_env'
@@ -29,7 +30,7 @@ def get_random_word():
 def index():
     if 'word' not in session:
         rand_word, image_url = get_random_word()
-        session['word'] = rand_word.upper()
+        session['word'] = re.sub(r'[^a-zA-Z\s]', '', rand_word).upper()
         session['anime_image']= image_url
         session['guesses']=[]
         session['misses'] = 0

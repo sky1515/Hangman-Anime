@@ -21,7 +21,7 @@
                 <img src="{{anime_image}}" alt="">
             {% endif %}
             <p>Word: {{ word_display }}</p>
-            <p class="game-end">You lost! The word was {{ session.word }}</p>
+            <p class="game-end">Game Over! The word was {{ session.word }}</p>
             <a href="{{ url_for('reset')}}">Try Again</a>
         {% else %}
             <!-- <p>Guesses: {{ guesses }}</p> -->
