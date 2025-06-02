@@ -1,0 +1,112 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 20px;
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+img{
+    display: block;
+    margin: auto;
+}
+pre, p{
+    font-size: 20px;
+    text-align: center;
+    white-space: pre;
+}
+p.game-end{
+    font-size: 30px;
+    text-align: center;
+}
+form{
+    text-align: center;
+    margin-top: 20px;
+}
+input[type='text']{
+    padding: 10px;
+    font-size: 16px;
+}
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+  display: inline-block;       /* Makes the anchor behave like a box */
+  padding: 12px 24px;          /* Space inside the box */
+  background-color: #333;      /* Dark background */
+  color: #fff;                 /* White text */
+  border-radius: 8px;          /* Rounded corners */
+  text-align: center;          /* Center text */
+  text-decoration: none;       /* Remove underline */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* subtle shadow */
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.key-row {
+    display: flex;
+    justify-content: center; /* or flex-start */
+    gap: 8px;
+}
+
+.key {
+  padding: 10px 14px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: none;
+  background-color: #f0f8ff;
+  color: #003366;
+  cursor: pointer;
+}
+
+.key.guessed {
+  background-color: #e0e0e0;
+  color: #777;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.key.wrong {
+  background-color: #ffe6e6;
+  color: #cc0000;
+  position: relative;
+}
+
+.key.wrong::after {
+  content: '✖';
+  position: absolute;
+  top: -10px;
+  right: -4px;
+  font-size: 18px;
+  color: red;
+}
+
+.key:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

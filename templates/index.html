@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman Game (Anime Edition)</h1>
+         {% if '_' not in word_display %}
+            {% if anime_image %}
+                <img src="{{anime_image}}" alt="">
+            {% endif %}
+            <p>Word: {{ word_display }}</p>
+            <p class="game-end">Congratulations! You won!</p>
+            <a href="{{ url_for('reset')}}">Play Again</a>
+        {% elif misses >= 8 %}
+            {% if anime_image %}
+                <img src="{{anime_image}}" alt="">
+            {% endif %}
+            <p>Word: {{ word_display }}</p>
+            <p class="game-end">You lost! The word was {{ session.word }}</p>
+            <a href="{{ url_for('reset')}}">Try Again</a>
+        {% else %}
+            <!-- <p>Guesses: {{ guesses }}</p> -->
+            <img src="{{ url_for('static', filename='images/'~misses~'.svg')}}" alt="">
+            <p>Word: {{ word_display }}</p>
+            <p>Misses: {{ misses }}</p>
+            <p>{{ message }}</p>
+        {% endif %}
+
+        <div class="keyboard">
+            {% for row in [['Q','W','E','R','T','Y','U','I','O','P'],
+                            ['A','S','D','F','G','H','J','K','L'],
+                            ['Z','X','C','V','B','N','M']] %}
+                <form action="{{ url_for('guess') }}", method="POST" class="key-row">
+                    {% for letter in row %}
+                        <button type="submit" name="guess" value="{{ letter }}" class="key {% if letter in guesses %}
+                                    {% if letter in word_display %}guessed
+                                    {% else %}wrong
+                                    {% endif %}
+                                {% endif %}">{{ letter }}
+                    </button>
+                    {% endfor %}
+                </form>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
+</html>
