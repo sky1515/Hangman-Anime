@@ -29,8 +29,8 @@ Miss too many guesses, and the hangman’s coming for you (No pressure).
 ![Incorrect Guess](image/incorrect_guess.png)
 
 ### The hangman finally gets you 😭
+<img src="image/game_over.png" alt="Game Over" width="300"/>
 
-![Game Over](image/game_over.png)
 
 
 ## Setup
